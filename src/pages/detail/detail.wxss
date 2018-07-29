@@ -1,0 +1,243 @@
+.box {
+  padding: 60rpx 0rpx;
+}
+.box .bt {
+  padding-bottom: 24.15458937rpx;
+  padding-left: 41.06280193rpx;
+  padding-right: 41.06280193rpx;
+  border-bottom: 1px solid #c9c9c9;
+}
+.box .progress {
+  padding: 0 50rpx;
+  margin-bottom: 24.15458937rpx;
+}
+.box .proBox {
+  padding: 0 30.19323671rpx;
+}
+.box .gress {
+  display: flex;
+  margin-top: -30.19323671rpx;
+}
+.box .gress .cell {
+  font-size: 14.49275362rpx;
+  width: 96.61835749rpx;
+  text-align: center;
+}
+.box .gress .mou {
+  flex: 1;
+}
+.box .gress .dot {
+  width: 51.93236715rpx;
+  height: 51.93236715rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 1px solid #ececec;
+  text-align: center;
+  line-height: 51.93236715rpx;
+  color: #ececec;
+  font-size: 15.09661836rpx;
+}
+.box .gress .exp {
+  font-size: 10.26570048rpx;
+  color: #585858;
+}
+.box .gress .ext {
+  color: #282828;
+  display: inline-block;
+  margin: 10rpx 0 6rpx;
+  font-weight: bold;
+  font-size: 16.30434783rpx;
+}
+.box .gress .acdot {
+  background-color: #FFDA33;
+  border: 1px solid #FFDA33;
+}
+.slide-image {
+  width: 100%;
+}
+.auth {
+  padding: 20rpx 60rpx;
+}
+.auth .head {
+  text-align: center;
+  border-bottom: 1px solid #c9c9c9;
+}
+.auth .head > text {
+  display: block;
+}
+.auth .head .num {
+  color: #585858;
+  font-size: 27.77777778rpx;
+}
+.auth .head .name {
+  font-size: 49.51690821rpx;
+  color: #000;
+  margin: 21.1352657rpx 0;
+}
+.auth .head .info {
+  font-size: 15.09661836rpx;
+  color: #585858;
+  padding-bottom: 40rpx;
+}
+.auth .bodys {
+  padding: 24.15458937rpx 0;
+  display: flex;
+  align-items: top;
+}
+.auth .bodys .left image {
+  width: 60.38647343rpx;
+  height: 60.38647343rpx;
+}
+.auth .bodys .mid {
+  padding: 0 20rpx;
+}
+.auth .bodys .mid .title {
+  font-size: 21.73913043rpx;
+  color: #000;
+}
+.auth .bodys .mid .ttl {
+  font-size: 12.68115942rpx;
+  color: #585858;
+}
+.auth .bodys .last {
+  flex: 1;
+  text-align: right;
+  font-size: 16.90821256rpx;
+  color: #c9c9c9;
+}
+.auth .btnBox {
+  text-align: center;
+}
+.auth .btnBox .opt {
+  color: #fff;
+}
+.auth .btnBox .tou {
+  padding: 0 51.93236715rpx;
+}
+.auth .btnBox .puts {
+  background-color: #FFDA33;
+  margin-right: 24.15458937rpx;
+}
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 25rpx;
+  color: #585858;
+}
+.discuss {
+  text-align: center;
+  padding: 48.30917874rpx 0;
+  font-size: 25.36231884rpx;
+}
+.discussTt textarea {
+  background-color: #f5f5f5;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+  font-size: 19.3236715rpx;
+}
+.discussTt .disBtn {
+  text-align: right;
+}
+.discussTt .disBtn button {
+  background-color: #FFDA33;
+}
+.btmBox {
+  padding: 27.17391304rpx;
+}
+.btmBox .total {
+  font-size: 19.3236715rpx;
+  color: #c9c9c9;
+}
+.btmBox .discussBox {
+  display: flex;
+  padding: 20rpx 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+.btmBox .discussBox .img {
+  width: 78.50241546rpx;
+}
+.btmBox .discussBox .img image {
+  width: 78.50241546rpx;
+  height: 78.50241546rpx;
+}
+.btmBox .discussBox .content {
+  flex: 1;
+  padding-left: 24.15458937rpx;
+  width: 100%;
+}
+.btmBox .discussBox .content .tt {
+  font-size: 19.3236715rpx;
+  color: #000;
+}
+.btmBox .discussBox .content .tt > text {
+  color: #c9c9c9;
+}
+.btmBox .discussBox .content .leave {
+  font-size: 19.3236715rpx;
+  color: #585858;
+}
+.btmBox .discussBox .content .other {
+  background-color: #f4f4f4;
+  position: relative;
+  margin-top: 20rpx;
+  padding: 12.07729469rpx;
+  border-radius: 5rpx;
+}
+.btmBox .discussBox .content .other::before {
+  content: '';
+  position: absolute;
+  left: 20rpx;
+  top: -34rpx;
+  width: 0px;
+  height: 0px;
+  border-top: 20rpx solid transparent;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.btmBox .discussBox .content .other .ott {
+  font-size: 19.3236715rpx;
+}
+.btmBox .discussBox .content .other .ott .leaveO {
+  display: block;
+  color: #585858;
+}
+.btmBox .discussBox .content .leaveBtn {
+  text-align: right;
+  padding: 10rpx 0;
+}
+.btmBox .discussBox .content .leaveBtn > image {
+  display: inline-block;
+  vertical-align: middle;
+  height: 27.17391304rpx;
+  width: 27.17391304rpx;
+  margin-left: 40rpx;
+}
+.btmBox .discussBox .content .leaveBtn > text {
+  display: inline-block;
+  color: #c9c9c9;
+  padding-left: 10rpx;
+  vertical-align: middle;
+  font-size: 19.3236715rpx;
+}
+.btmBox .discussBox .content .text-wrp {
+  display: none;
+}
+.btmBox .discussBox .content .otLeave {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-size: 19.3236715rpx;
+  height: 200rpx;
+}
+.btmBox .discussBox .content .showT {
+  display: block;
+}
+.btmBox .discussBox .content .push {
+  padding-top: 10rpx;
+  text-align: right;
+}
+.btmBox .discussBox .content .push button {
+  font-size: 19.3236715rpx;
+}

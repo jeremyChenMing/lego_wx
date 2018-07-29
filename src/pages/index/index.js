@@ -7,7 +7,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    show: false,
+    show: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     tabs: ["选项一", "选项二", "选项三"],
     activeIndex: 1,
@@ -17,7 +17,7 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../detail/detail'
     })
   },
   onLoad: function () {

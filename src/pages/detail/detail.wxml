@@ -1,0 +1,122 @@
+<!--logs.wxml-->
+<view class="box">
+  <view class="bt">
+    <view class="progress">
+      <view class="proBox">
+        <progress percent="20" active activeColor="#FFDA33" stroke-width="5"/>
+      </view>
+      <view class="gress">
+        <view class="cell" >
+          <view class="dot acdot">
+            <icon class="icons" type="success_no_circle" size="12" color="#fff" />
+          </view>
+          <text class="ext">投票阶段</text>
+          <view class="exp">345/123</view>
+        </view> 
+        <view class="mou"></view>
+        <view class="cell" >
+          <view class="dot">0%</view>
+          <text class="ext">投票阶段</text>
+          <view class="exp">345/123</view>
+        </view> 
+        <view class="mou"></view>
+        <view class="cell" >
+          <view class="dot">0%</view>
+          <text class="ext">投票阶段</text>
+          <view class="exp">众筹完成一周内</view>
+        </view> 
+        <view class="mou"></view>
+        <view class="cell" >
+          <view class="dot">0%</view>
+          <text class="ext">投票阶段</text>
+          <view class="exp">等待生产完成</view>
+        </view> 
+      </view>
+    </view>
+    <view class="cons">
+      <swiper 
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" 
+        interval="{{interval}}" 
+        duration="{{duration}}"
+      >
+        <block wx:key="index" wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper> 
+
+      <view class="auth">
+        <view class="head">
+          <text class="num">+8222</text>
+          <text class="name">+FERRARI 250gto</text>
+          <text class="info">watch bowen and elijah’s story about good friendssuprhero powers and pizza partirs!</text>
+        </view>
+        <view class="bodys">
+          <view class="left">
+            <image src="{{src}}"></image>
+          </view>
+          <view class="mid">
+            <view class="title">sx-dhuq</view>
+            <view class="ttl">这里是简介。。。</view>
+          </view>
+          <view class="last">作品：66</view>
+        </view>
+
+        <view class="btnBox">
+          <button type="primary" size="mini" class="tou puts">给TA投票</button>
+          <button type="warn" size="mini" class="tou">支持众筹</button>
+        </view>
+
+
+        <view class="discuss">讨论区</view>
+      </view>
+      <view class="discussTt">
+        <textarea placeholder="请输入内容" maxlength="100"/>
+        <view class="disBtn">
+          <button type="primary" size="mini" class="tou">评论</button>
+        </view>
+      </view>
+    </view>
+  </view> 
+
+
+  <view class="btmBox">
+    <text class="total">全部评论： &nbsp;&nbsp;25</text>
+
+    <view class="discussBox" >
+      <view class="img">
+        <image src="{{src}}"></image>
+      </view>
+      <view class="content">
+        <view class="tt">
+          CREARE <text>16天前</text>
+        </view>
+        <text class="leave">留言内容哈哈哈三六九等浪费</text>
+
+        <view class="other">
+          <view class="ott">
+            CREARE
+            <text class="leaveO">留言内容哈哈哈三六九等浪费</text>
+          </view>
+        </view>
+        
+        <view class="leaveBtn">
+          <image bindtap="handlePing" class="ping {{bool ? 'act' : ''}}" src="{{ping}}"></image>
+          <image class="dian" src="{{dian}}"></image> 
+          <text>20</text>
+        </view>
+        <view  class="text-wrp {{bool ? 'showT' : ''}}">
+          <textarea class="otLeave" placeholder="请输入内容" maxlength="100"/>
+          <view class="push">
+            <button size="mini">发布</button>
+          </view>
+        </view>
+        
+        
+      </view>
+    </view>
+
+  </view>
+</view>
