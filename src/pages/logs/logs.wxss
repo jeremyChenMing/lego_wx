@@ -1,8 +1,154 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+page {
+  background-color: #f5f5f5;
 }
-.log-item {
-  margin: 10rpx;
+.messageBox {
+  min-height: 100rpx;
+  background-color: #fff;
+}
+.messageBox .bg {
+  height: 100rpx;
+  background-color: #ffc;
+  position: relative;
+  text-align: center;
+}
+.messageBox .bg .head {
+  width: 153.98550725rpx;
+  height: 153.98550725rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -76.99275362rpx;
+  bottom: -76.99275362rpx;
+  border-radius: 50%;
+}
+.messageBox .mes {
+  padding: 76.99275362rpx 0rpx 40rpx;
+  text-align: center;
+}
+.messageBox .mes .title {
+  font-size: 35.62801932rpx;
+  color: #282828;
+  margin: 15rpx 0;
+}
+.messageBox .mes .tt {
+  font-size: 22.9468599rpx;
+  color: #5e5e5e;
+  padding: 0 40rpx;
+}
+.nav {
+  display: flex;
+  background-color: #fff;
+  padding-top: 20rpx;
+}
+.nav view:nth-child(1) {
+  padding-right: 20rpx;
+}
+.nav view:nth-child(2) {
+  padding-left: 20rpx;
+}
+.nav .tab {
+  flex: 1;
+  font-size: 32.00483092rpx;
+}
+.nav .tab > text {
+  display: inline-block;
+  padding: 0rpx 20rpx;
+  padding-bottom: 29.58937198rpx;
+  border-bottom: 1px solid transparent;
+  color: #c9c9c9;
+}
+.nav .tab .acTab {
+  border-color: #282828;
+  color: #282828;
+}
+.nav .l {
+  text-align: right;
+}
+.content {
+  padding: 50.72463768rpx 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .cell {
+  box-sizing: border-box;
+  width: 50%;
+  margin-bottom: 40rpx;
+  padding: 0 10rpx;
+}
+.content .cellCon {
+  background-color: #fff;
+}
+.content .cellCon image {
+  height: 266.30434783rpx;
+  width: 100%;
+}
+.content .cellCon .conText {
+  padding: 33.21256039rpx 24.15458937rpx;
+  font-size: 19.3236715rpx;
+}
+.content .cellCon .text {
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 10rpx;
+}
+.content .cellCon .text view:nth-child(1) {
+  font-size: 14.49275362rpx;
+  color: #585858;
+}
+.content .cellCon .text view:nth-child(2) {
+  font-size: 20.53140097rpx;
+  color: #282828;
+  margin: 12.07729469rpx 0 20.53140097rpx;
+}
+.content .cellCon .text view:nth-child(3) {
+  font-size: 14.49275362rpx;
+  color: #585858;
+  padding: 0 40rpx;
+}
+.content .cellCon .bodys {
+  padding-top: 16.30434783rpx;
+  display: flex;
+  align-items: center;
+}
+.content .cellCon .bodys .left {
+  width: 41.06280193rpx;
+  height: 41.06280193rpx;
+}
+.content .cellCon .bodys .mid {
+  padding: 0 20rpx;
+}
+.content .cellCon .bodys .mid .title {
+  font-size: 15.09661836rpx;
+  color: #000;
+}
+.content .cellCon .bodys .mid .ttl {
+  font-size: 8.45410628rpx;
+  color: #585858;
+}
+.content .cellCon .bodys .last {
+  flex: 1;
+  text-align: right;
+  font-size: 13.88888889rpx;
+  color: #c9c9c9;
+}
+.content .cellCon .bodys .last image {
+  height: 13rpx;
+  width: 16rpx;
+}
+.content .cellCon .newBody {
+  position: relative;
+  line-height: 42rpx;
+  text-align: center;
+  font-size: 16.90821256rpx;
+  color: #c9c9c9;
+}
+.content .cellCon .newBody image {
+  height: 13rpx;
+  width: 16rpx;
+}
+.content .cellCon .newBody > text {
+  font-size: 10.26570048rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom: 0;
+  color: #c9c9c9;
 }

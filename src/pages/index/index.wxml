@@ -4,7 +4,7 @@
     <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
@@ -15,11 +15,94 @@
 
 
   <view wx:else>
-    <view class="page">
-      <view class="page__hd">
-          <view class="page__title">Tabbar</view>
-          <view class="page__desc">底部导航，建议采用小程序原生的tabbar，通过设置app.json来实现。详情请看小程序文档。</view>
+    <view class="nav">
+      <view bindtap="handleNav" data-id="1" class="tab l"><text class="{{tab == 1 ? 'acTab' : ''}}">推荐作品</text></view>
+      <view bindtap="handleNav" data-id="2" class="tab"><text class="{{tab == 2 ? 'acTab' : ''}}">所有作品</text></view>
+    </view>
+    
+
+    <view wx:if="{{tab == 1}}" class="cons">
+      <swiper 
+        circular
+        previous-margin="{{pre}}"
+        next-margin="{{next}}"
+        bindchange="handleChange" 
+        indicator-dots="{{dots}}" 
+        autoplay="{{auto}}" 
+        current="{{current}}">
+        <block wx:for="{{cells}}" wx:key="index">
+          <swiper-item>
+            <view bindtap="bindViewTap" class="cell {{current === index ? 'scal' : ''}}">
+              <image src="{{arr[0]}}"></image>
+              <view class="mes">
+                <view class="proMes">
+                  <view class="til"> <span class="iconfont icon-xin-tianchong red"></span> 2482票</view>
+                  <view class="info">FERRARI 250gto</view> 
+                </view>
+                <view class="bodys">
+                  <image class="left" src="/images/avart.png"></image>
+                  <view class="mid">
+                    <view class="title">sx-dhuq</view>
+                    <view class="ttl">这里是简介。。。</view>
+                  </view>
+                  <view class="last">
+                    <view>
+                      <!-- <image src="/images/ping.png"></image>  -->
+                      <span style="font-size: 24rpx" class="iconfont icon-yanjing"></span>
+                      66
+                    </view>
+                    <view>16天前</view>
+                  </view>
+                </view>
+
+
+                <view class="btnBox">
+                  <button size="mini" hover-class="active" style="margin-right: 20rpx" type="primary">给他投票</button>
+                  <button size="mini">暂不投票</button>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+
+
+    
+    <view wx:elif="{{tab == 2}}" class="content">
+      <view bindtap="bindViewTap" wx:for="{{arr}}" wx:key="index" class="cell">
+        <view class="cellCon">
+          <image src="{{item}}"></image>
+          <view class="conText">
+            <view class="text">
+              <view><span style="font-size: 18rpx" class="iconfont icon-xin-tianchong red"></span>+2833</view>
+              <view>超级越野车</view>
+              <view>文案不知道写什么车看起来不错经典车型</view> 
+            </view>
+            <view class="bodys">
+              <image class="left" src="/images/avart.png"></image>
+              <view class="mid">
+                <view class="title">sx-dhuq</view>
+                <view class="ttl">这里是简介。。。</view>
+              </view>
+              <view class="last">
+                <view>
+                    <!-- <image src="/images/ping.png"></image>  -->
+                    <span style="font-size: 16rpx" class="iconfont icon-yanjing"></span>
+                    66
+                </view>
+                <view>16天前</view>
+              </view>
+            </view>
+          </view>
+          
+
+        </view>
       </view>
-  </view>
+    </view>
+    
+    <view wx:else></view>
+
   </view>
 </view>
