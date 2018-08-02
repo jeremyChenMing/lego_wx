@@ -85,9 +85,13 @@
   display: flex;
   align-items: top;
 }
+.auth .bodys .left {
+  overflow: hidden;
+}
 .auth .bodys .left image {
   width: 60.38647343rpx;
   height: 60.38647343rpx;
+  border-radius: 50%;
 }
 .auth .bodys .mid {
   padding: 0 20rpx;
@@ -99,6 +103,7 @@
 .auth .bodys .mid .ttl {
   font-size: 12.68115942rpx;
   color: #585858;
+  margin-top: 5rpx;
 }
 .auth .bodys .last {
   flex: 1;
@@ -108,6 +113,9 @@
 }
 .auth .btnBox {
   text-align: center;
+}
+.auth .btnBox button[disabled] {
+  color: rgba(0, 0, 0, 0.2);
 }
 .auth .btnBox .opt {
   color: #fff;
@@ -240,4 +248,10 @@ textarea {
 }
 .btmBox .discussBox .content .push button {
   font-size: 19.3236715rpx;
+}
+.active {
+  background-color: #e0aa00!important;
+}
+.red {
+  color: #FF0042;
 }

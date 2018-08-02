@@ -1,25 +1,10 @@
 <!--index.wxml-->
 <view>
-  <view wx:if="{{show}}" class="container">
-    <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
-  </view>
-
-
-  <view wx:else>
+  <view>
     <view class="nav">
       <view bindtap="handleNav" data-id="1" class="tab l"><text class="{{tab == 1 ? 'acTab' : ''}}">推荐作品</text></view>
       <view bindtap="handleNav" data-id="2" class="tab"><text class="{{tab == 2 ? 'acTab' : ''}}">所有作品</text></view>
     </view>
-    
 
     <view wx:if="{{tab == 1}}" class="cons">
       <swiper 
@@ -32,18 +17,18 @@
         current="{{current}}">
         <block wx:for="{{cells}}" wx:key="index">
           <swiper-item>
-            <view bindtap="bindViewTap" class="cell {{current === index ? 'scal' : ''}}">
-              <image src="{{arr[0]}}"></image>
+            <view class="cell {{current === index ? 'scal' : ''}}">
+              <image bindtap="bindViewTap" data-id="{{item.id}}" data-auth="{{item.author_id}}" src="{{item.images[0].url}}"></image>
               <view class="mes">
                 <view class="proMes">
-                  <view class="til"> <span class="iconfont icon-xin-tianchong red"></span> 2482票</view>
-                  <view class="info">FERRARI 250gto</view> 
+                  <view class="til"> <text class="iconfont icon-xin-tianchong red"></text> {{item.num_votes}}票</view>
+                  <view class="info">{{item.title}}</view> 
                 </view>
                 <view class="bodys">
-                  <image class="left" src="/images/avart.png"></image>
+                  <image class="left" src="{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].avatar : '/images/avart.png'}}"></image>
                   <view class="mid">
-                    <view class="title">sx-dhuq</view>
-                    <view class="ttl">这里是简介。。。</view>
+                    <view class="title">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].nickname : ' '}}</view>
+                    <view class="ttl">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].intro : ' '}}</view>
                   </view>
                   <view class="last">
                     <view>
@@ -51,7 +36,7 @@
                       <span style="font-size: 24rpx" class="iconfont icon-yanjing"></span>
                       66
                     </view>
-                    <view>16天前</view>
+                    <view>{{item.CHN}}</view>
                   </view>
                 </view>
 
@@ -71,14 +56,14 @@
 
     
     <view wx:elif="{{tab == 2}}" class="content">
-      <view bindtap="bindViewTap" wx:for="{{arr}}" wx:key="index" class="cell">
+      <view  wx:for="{{cells}}" wx:key="index" class="cell">
         <view class="cellCon">
-          <image src="{{item}}"></image>
+          <image bindtap="bindViewTap" src="{{item.images[0].url}}"></image>
           <view class="conText">
             <view class="text">
-              <view><span style="font-size: 18rpx" class="iconfont icon-xin-tianchong red"></span>+2833</view>
-              <view>超级越野车</view>
-              <view>文案不知道写什么车看起来不错经典车型</view> 
+              <view><span style="font-size: 18rpx" class="iconfont icon-xin-tianchong red"></span> {{item.num_votes}}票</view>
+              <view>{{item.title}}</view>
+              <view>{{item.description}}</view> 
             </view>
             <view class="bodys">
               <image class="left" src="/images/avart.png"></image>
@@ -103,6 +88,5 @@
     </view>
     
     <view wx:else></view>
-
   </view>
 </view>

@@ -42,31 +42,31 @@
       >
         <block wx:key="index" wx:for="{{imgUrls}}">
           <swiper-item>
-            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>
           </swiper-item>
         </block>
       </swiper> 
 
       <view class="auth">
-        <view class="head">
-          <text class="num">+8222</text>
-          <text class="name">+FERRARI 250gto</text>
-          <text class="info">watch bowen and elijah’s story about good friendssuprhero powers and pizza partirs!</text>
+        <view class="head" >
+          <text class="num" animation="{{animationData}}"><text class="iconfont icon-xin-tianchong red"></text> {{message.num_votes ? message.num_votes : 0}}</text>
+          <text class="name">{{message.title}}</text>
+          <text class="info">{{message.description}}</text>
         </view>
         <view class="bodys">
           <view class="left">
-            <image src="{{src}}"></image>
+            <image src="{{person.avatar ? person.avatar : src}}"></image>
           </view>
           <view class="mid">
-            <view class="title">sx-dhuq</view>
-            <view class="ttl">这里是简介。。。</view>
+            <view class="title">{{person.nickname}}</view>
+            <view class="ttl">{{person.intro}}</view>
           </view>
-          <view class="last">作品：66</view>
+          <view class="last">作品：{{person.num_products ? person.num_products : 0}}</view>
         </view>
 
         <view class="btnBox">
-          <button type="primary" size="mini" class="tou puts">给TA投票</button>
-          <button type="warn" size="mini" class="tou">支持众筹</button>
+          <button disabled="{{loading}}" bindtap="prise" hover-class="active" type="primary" size="mini" class="tou puts">给TA投票</button>
+          <button disabled="true" type="warn" size="mini" class="tou">支持众筹</button>
         </view>
 
 
@@ -86,7 +86,7 @@
     <text class="total">全部评论： &nbsp;&nbsp;25</text>
 
     <view class="discussBox" >
-      <view class="img">
+      <view class="img" >
         <image src="{{src}}"></image>
       </view>
       <view class="content">

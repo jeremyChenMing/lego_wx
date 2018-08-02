@@ -100,10 +100,11 @@
     }
 
     .left{
-    
+      overflow: hidden;
       image{
         width: 100rpx / @base;
         height: 100rpx / @base;
+        border-radius: 50%;
       }
     }
     .mid{
@@ -115,6 +116,7 @@
       .ttl{
         font-size: 21rpx / @base;
         color: #585858;
+        margin-top: 5rpx;
       }
     }
     .last{
@@ -126,6 +128,9 @@
   }
   .btnBox{
     text-align: center;
+    button[disabled]{
+      color: rgba(0, 0, 0, .2);
+    }
     .opt{
       color: #fff;
     }
@@ -283,7 +288,12 @@ textarea{
   }
 }
 
-
+.active{
+  background-color: #e0aa00!important;
+}
+.red{
+  color: #FF0042;
+}
 
 
 

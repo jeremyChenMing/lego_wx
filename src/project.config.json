@@ -43,9 +43,10 @@
 					"scene": "1005"
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "详情",
-					"pathName": "pages/detail/detail"
+					"pathName": "pages/detail/detail",
+					"query": "id=7&author=7"
 				}
 			]
 		}
