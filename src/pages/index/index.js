@@ -23,6 +23,9 @@ Page({
     return '123'
   },
   onLoad: function () {
+    wx.showShareMenu({
+      withShareTicket: true,
+    })
     getProducts().then( data => {
       if (data.statusCode === 200) {
         console.log(data.data, '*&')
@@ -103,8 +106,8 @@ Page({
     }
     return {
       title: '小霸王其乐无穷',
-      path: '/pages/index?id=123',
-      imageUrl: '/images/produce.png'
+      path: '/pages/index/index?id=123',
+      imageUrl: '/images/produce.png',
     }
   }
 

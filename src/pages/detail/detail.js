@@ -25,7 +25,14 @@ Page({
     ],
     bool: false
   },
+  onShow: function (e) {
+    console.log(e, 'onShow')
+  },
   onLoad: function (e) {
+    console.log(e, 'onLoad')
+    wx.showShareMenu({
+      withShareTicket: true,
+    })
     let animation = wx.createAnimation({
       duration: 200,
       timingFunction: 'ease-in',
@@ -101,7 +108,28 @@ Page({
     })
     
   },
-
+  onShareAppMessage: function (res) {
+    // console.log(res)
+    // console.log(this.data.person)
+    // console.log(this.data.message)
+    // console.log(this.data.params)
+    if (res.from === 'menu') {
+      // 来自右上角的转发菜单
+    }else if (res.from === 'button') {
+      // 来自按钮转发
+    }
+    return {
+      title: `${this.data.message.title} -- ${this.data.person.nickname}`,
+      path: `/pages/detail/detail?id=${this.data.params.id}&author=${this.data.params.author}`,
+      imageUrl: this.data.message.images[0].url,
+      success: (res) => {
+        console.log(res, '---')
+      },
+      fail: (res) => {
+        console.log(res)
+      }
+    }
+  },
 
 
 
@@ -110,7 +138,6 @@ Page({
 
 
   handlePing() {
-    console.log('123', this.data.bool)
     this.setData({
       bool: !this.data.bool
     })

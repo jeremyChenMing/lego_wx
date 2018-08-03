@@ -45,7 +45,7 @@
             <view>{{item.description}}</view> 
           </view>
           <view class="bodys">
-            <image class="left" src="/images/avart.png"></image>
+            <image class="left" src="{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].avatar : '/images/touxiang.png'}}"></image>
             <view class="mid">
               <view class="title">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].nickname : ' '}}</view>
               <view class="ttl">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].intro : ' '}}</view>

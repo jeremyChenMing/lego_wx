@@ -33,14 +33,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "场景测试",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": "1005"
+					"pathName": "pages/detail/detail",
+					"query": "id=7&author=7",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "4zYjhOEYW0Ih6YAyvF4dFo5QeEz5Q8PHeU8_GMgXUj8@cr4dev",
+						"shareKey": "2HkQ7l3rGJGmt1IeVQekliaWTkq-ZQ9zvWINuSuJC09qm7oPrGvWR8WFeTzUxldTKzd64Oz_C5H78TFYnq5VhA~~"
+					}
 				},
 				{
 					"id": 1,

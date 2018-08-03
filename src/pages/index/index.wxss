@@ -109,6 +109,7 @@ page {
 .content .cellCon .bodys .left {
   width: 41.06280193rpx;
   height: 41.06280193rpx;
+  border-radius: 50%;
 }
 .content .cellCon .bodys .mid {
   padding: 0 20rpx;
