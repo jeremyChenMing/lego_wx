@@ -90,8 +90,13 @@ page {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 10rpx;
 }
+.content .cellCon .text > view {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .content .cellCon .text view:nth-child(1) {
-  font-size: 14.49275362rpx;
+  font-size: 18.11594203rpx;
   color: #585858;
 }
 .content .cellCon .text view:nth-child(2) {
@@ -123,6 +128,7 @@ page {
 .content .cellCon .bodys .mid .ttl {
   font-size: 8.45410628rpx;
   color: #585858;
+  margin-top: 5rpx;
 }
 .content .cellCon .bodys .last {
   flex: 1;
@@ -151,4 +157,7 @@ page {
   right: 10rpx;
   bottom: 0;
   color: #c9c9c9;
+}
+.red {
+  color: #FF0042;
 }

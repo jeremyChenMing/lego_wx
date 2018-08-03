@@ -68,8 +68,8 @@
             <view class="bodys">
               <image class="left" src="/images/avart.png"></image>
               <view class="mid">
-                <view class="title">sx-dhuq</view>
-                <view class="ttl">这里是简介。。。</view>
+                <view class="title">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].nickname : ' '}}</view>
+                <view class="ttl">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].intro : ' '}}</view>
               </view>
               <view class="last">
                 <view>
@@ -77,7 +77,7 @@
                     <span style="font-size: 16rpx" class="iconfont icon-yanjing"></span>
                     66
                 </view>
-                <view>16天前</view>
+                <view>{{item.CHN}}</view>
               </view>
             </view>
           </view>

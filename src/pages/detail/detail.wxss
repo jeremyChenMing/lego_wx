@@ -53,8 +53,8 @@
   background-color: #FFDA33;
   border: 1px solid #FFDA33;
 }
-.slide-image {
-  width: 100%;
+.cons swiper {
+  height: 400rpx;
 }
 .auth {
   padding: 20rpx 60rpx;

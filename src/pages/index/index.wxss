@@ -120,6 +120,7 @@ page {
 .content .cellCon .bodys .mid .ttl {
   font-size: 8.45410628rpx;
   color: #585858;
+  margin-top: 5rpx;
 }
 .content .cellCon .bodys .last {
   flex: 1;
