@@ -1,11 +1,39 @@
 //app.js
+const { getUsers } = require('./utils/fetch');
 App({
   onLaunch: function () {
+    const that = this;
     // 展示本地存储能力
+    console.log('展示本地存储能力')
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
+    wx.getStorage({
+      key: 'keys',
+      success: function (res) {
+        that.globalData['keys'] = res.data
+      },
+      fail: function (res) {
+        console.log(res)
+        getUsers().then( data => {
+          if (data.statusCode === 200) {
+            let arr = {};
+            data.data.map( item => {
+              arr[item.id] = item
+            })
+            console.log(arr)
+            wx.setStorage({
+              key:"keys",
+              data: arr
+            })
+          }else{
 
+          }
+        })
+      }
+    })
+
+    
     // 登录
     wx.login({
       success: res => {
@@ -33,7 +61,6 @@ App({
       }
     })
   },
-  
   globalData: {
     userInfo: null
   }

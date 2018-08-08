@@ -1,32 +1,36 @@
 
-const { getProductsOfDetail, getPersonMes, givePraise } = require('../../utils/fetch')
-
+const { getProductsOfDetail, getPersonMes, givePraise, HOST, getCommentsList, addFirComments } = require('../../utils/fetch')
+const { formatTimeCH } = require('../../utils/util');
+const app = getApp();
 Page({
   data: {
+    comments: [],
     imgUrls: [],
     message: {},
     person: {},
+    authors: {},
     animationData: {},
     params: {},
     loading: false,
+    host: HOST,
 
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
     src:" /images/avart.png",
-    dian:" /images/dian.png",
-    ping:" /images/ping.png",
     proTitle: [
       {name: '投票阶段'},
       {name: '众筹阶段'},
       {name: '生产优化'},
       {name: '生产中'},
     ],
-    bool: false
+
+    firValue: undefined,
+    dis: true
   },
   onShow: function (e) {
-    console.log(e, 'onShow')
+    // console.log(e, 'onShow')
   },
   onLoad: function (e) {
     console.log(e, 'onLoad')
@@ -55,29 +59,48 @@ Page({
         })
       }
     })
-    getPersonMes(e.author).then( data => {
-      if (data.statusCode === 200) {
-        // console.log(data.data, '&&person')
-        this.setData({
-          person: data.data
-        })
-      }else{
 
-      }
-    })
 
+    // getPersonMes(e.author).then( data => {
+    //   if (data.statusCode === 200) {
+    //     this.setData({
+    //       person: data.data
+    //     })
+    //   }else{
+
+    //   }
+    // })
 
 
     
+    this.getGlobal(e.author)
+    this.commentsList()
 
   },
+
+  commentsList: function () {
+    getCommentsList(this.data.params.id).then( data => {
+      if (data.statusCode === 200) {
+        console.log(data.data)
+        let arr = [];
+        data.data.map( item => {
+          item.bool = false;
+          item['CHN'] = formatTimeCH(item.create_at)
+          arr.push(item)
+        })
+        this.setData({
+          comments: arr
+        })
+      }
+    })
+  },
+
   prise: function () {
     console.log()
     const that = this;
     this.setData({
       loading: true
     })
-
 
     givePraise(this.data.params.id).then( data => {
       if (data.statusCode === 200) {
@@ -106,7 +129,6 @@ Page({
         }, 600)
       }
     })
-    
   },
   onShareAppMessage: function (res) {
     // console.log(res)
@@ -137,10 +159,54 @@ Page({
 
 
 
-  handlePing() {
+  handlePing: function(e) {
+    const index = e.currentTarget.dataset;
+    this.data.comments[index.index].bool = !this.data.comments[index.index].bool
     this.setData({
-      bool: !this.data.bool
+      comments: this.data.comments
     })
+  },
+
+
+  valueChange: function (e) {
+    this.setData({
+      firValue: e.detail.value,
+    })
+  },
+  takeComment: function () {
+    this.setData({dis: false})
+    console.log(this.data.params)
+    console.log(this.data.firValue)
+
+    // addFirComments(this.data.params.id, {content: this.data.firValue}).then( data => {
+    //   if (data.statusCode === 200) {
+        // this.commentsList()
+        // this.setData({dis: false})
+    //   }
+    // })
+  },
+  getGlobal: function (id) {
+    const that = this;
+    if (app.globalData.keys) {
+      console.log(app.globalData.keys[id], '---')
+      this.setData({
+        person: app.globalData.keys[id],
+        authors: app.globalData.keys
+      })
+    }else{
+      wx.getStorage({
+        key: 'keys',
+        success: function (res) {
+          that.setData({
+            person: res.data[id],
+            authors: res.data,
+          })
+        },
+        fail: function (res) {
+          console.log(res)
+        }
+      })
+    }
   }
 
 

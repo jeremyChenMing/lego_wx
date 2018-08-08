@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<view class="box">
+<view class="box normals">
   <view class="bt">
     <view class="progress">
       <view class="proBox">
@@ -42,20 +42,20 @@
       >
         <block wx:key="index" wx:for="{{imgUrls}}">
           <swiper-item>
-            <image src="{{item.url}}" mode="aspectFit" class="slide-image"/>
+            <image src="{{host + item.url}}" mode="aspectFit" class="slide-image"/>
           </swiper-item>
         </block>
       </swiper> 
 
       <view class="auth">
         <view class="head" >
-          <text class="num" animation="{{animationData}}"><text class="iconfont icon-xin-tianchong red"></text> {{message.num_votes ? message.num_votes : 0}}</text>
+          <text class="num" animation="{{animationData}}"><text class="iconfont icon-xin-tianchong red"></text> {{message.num_votes ? message.num_votes : 0}}票</text>
           <text class="name">{{message.title}}</text>
           <text class="info">{{message.description}}</text>
         </view>
         <view class="bodys">
           <view class="left">
-            <image src="{{person.avatar ? person.avatar : src}}"></image>
+            <image src="{{person.avatar ? (host + person.avatar) : src}}"></image>
           </view>
           <view class="mid">
             <view class="title">{{person.nickname}}</view>
@@ -73,9 +73,9 @@
         <view class="discuss">讨论区</view>
       </view>
       <view class="discussTt">
-        <textarea placeholder="请输入内容" maxlength="100"/>
+        <textarea value="{{firValue}}" bindinput="valueChange" maxlength="100" placeholder="请输入内容" maxlength="100"/>
         <view class="disBtn">
-          <button type="primary" size="mini" class="tou">评论</button>
+          <button disabled="{{(firValue && dis) ? false : true}}" bindtap="takeComment" type="primary" size="mini" class="tou1">评论</button>
         </view>
       </view>
     </view>
@@ -83,19 +83,19 @@
 
 
   <view class="btmBox">
-    <text class="total">全部评论： &nbsp;&nbsp;25</text>
+    <text class="total">全部评论： {{comments.length}}</text>
 
-    <view class="discussBox" >
+    <view wx:for="{{comments}}" wx:key="index" class="discussBox" >
       <view class="img" >
-        <image src="{{src}}"></image>
+        <image src="{{authors[item.author_id] ? (host + authors[item.author_id].avatar) : src}}"></image>
       </view>
       <view class="content">
         <view class="tt">
-          CREARE <text>16天前</text>
+          {{authors[item.author_id] ? authors[item.author_id].nickname : ''}} <text style="padding: 0 10rpx"> {{item.CHN}}</text>
         </view>
-        <text class="leave">留言内容哈哈哈三六九等浪费</text>
+        <text class="leave">{{item.content}}</text>
 
-        <view class="other">
+        <view style="display: none;" class="other">
           <view class="ott">
             CREARE
             <text class="leaveO">留言内容哈哈哈三六九等浪费</text>
@@ -103,11 +103,9 @@
         </view>
         
         <view class="leaveBtn">
-          <image bindtap="handlePing" class="ping {{bool ? 'act' : ''}}" src="{{ping}}"></image>
-          <image class="dian" src="{{dian}}"></image> 
-          <text>20</text>
+          <text bindtap="handlePing" data-index="{{index}}" class="iconfont icon-liuyan2 icon iconC"></text>
         </view>
-        <view  class="text-wrp {{bool ? 'showT' : ''}}">
+        <view  class="text-wrp {{item.bool ? 'showT' : ''}}">
           <textarea class="otLeave" placeholder="请输入内容" maxlength="100"/>
           <view class="push">
             <button size="mini">发布</button>

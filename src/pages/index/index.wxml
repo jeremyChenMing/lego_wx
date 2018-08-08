@@ -18,14 +18,14 @@
         <block wx:for="{{cells}}" wx:key="index">
           <swiper-item>
             <view class="cell {{current === index ? 'scal' : ''}}">
-              <image bindtap="bindViewTap" data-id="{{item.id}}" data-auth="{{item.author_id}}" src="{{item.images[0].url}}"></image>
+              <image bindtap="bindViewTap" data-id="{{item.id}}" data-auth="{{item.author_id}}" src="{{host + item.images[0].url}}"></image>
               <view class="mes">
                 <view class="proMes">
-                  <view class="til"> <text class="iconfont icon-xin-tianchong red"></text> {{item.num_votes}}票</view>
+                  <view class="til" animation="{{animationData}}"> <text class="iconfont icon-xin-tianchong red"></text> {{item.num_votes}}票</view>
                   <view class="info">{{item.title}}</view> 
                 </view>
                 <view class="bodys">
-                  <image class="left" src="{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].avatar : '/images/touxiang.png'}}"></image>
+                  <image class="left" src="{{authorIdJSON[item.author_id] ? (host + authorIdJSON[item.author_id].avatar) : '/images/touxiang.png'}}"></image>
                   <view class="mid">
                     <view class="title">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].nickname : ' '}}</view>
                     <view class="ttl">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].intro : ' '}}</view>
@@ -42,8 +42,8 @@
 
 
                 <view class="btnBox">
-                  <button size="mini" hover-class="active" style="margin-right: 20rpx" type="primary">给他投票</button>
-                  <button size="mini">暂不投票</button>
+                  <button size="mini" disabled="{{loading}}" data-id="{{item.id}}" data-index="{{index}}"  bindtap="prise" hover-class="active" style="margin-right: 20rpx" type="primary">给他投票</button>
+                  <button size="mini" bindtap="noPrise">暂不投票</button>
                 </view>
               </view>
             </view>
@@ -57,8 +57,8 @@
     
     <view wx:elif="{{tab == 2}}" class="content">
       <view  wx:for="{{cells}}" wx:key="index" class="cell">
-        <view class="cellCon">
-          <image bindtap="bindViewTap" src="{{item.images[0].url}}"></image>
+        <view class="cellCon" bindtap="bindViewTap" data-id="{{item.id}}" data-auth="{{item.author_id}}">
+          <image src="{{host + item.images[0].url}}"></image>
           <view class="conText">
             <view class="text">
               <view><span style="font-size: 18rpx" class="iconfont icon-xin-tianchong red"></span> {{item.num_votes}}票</view>
@@ -66,7 +66,7 @@
               <view>{{item.description}}</view> 
             </view>
             <view class="bodys">
-              <image class="left" src="{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].avatar : '/images/touxiang.png'}}"></image>
+              <image class="left" src="{{authorIdJSON[item.author_id] ? (host + authorIdJSON[item.author_id].avatar) : '/images/touxiang.png'}}"></image>
               <view class="mid">
                 <view class="title">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].nickname : ' '}}</view>
                 <view class="ttl">{{authorIdJSON[item.author_id] ? authorIdJSON[item.author_id].intro : ' '}}</view>

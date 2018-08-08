@@ -61,7 +61,7 @@ const post = (url, query={}, data, options={}) => {
     })
   }).then(parseJSON)
 }
-const HOST = 'https://bricks.upvi.com';
+export const HOST = 'https://bricks.upvi.com';
 
 
 export const getProducts = (query) => {
@@ -80,5 +80,23 @@ export const givePraise = (id, data) => {
   return post(`${HOST}/api/v1/products/${id}/votes`, {}, data)
 }
 
+
+// 获取评论列表
+export const getCommentsList = (id, query = {}) => {
+  return get(`${HOST}/api/v1/products/${id}/comments`, query)
+}
+// 发起评论
+export const addFirComments = (id, data, query = {}) => {
+  return post(`${HOST}/api/v1/products/${id}/comments`, query, data)
+}
+
+
+
+
+
+// 17、获取作者
+export const getUsers = () => {
+  return get(`${HOST}/api/v1/users`)
+}
 
 

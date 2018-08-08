@@ -7,7 +7,7 @@ page {
 }
 .messageBox .bg {
   height: 100rpx;
-  background-color: #ffc;
+  background-color: #FFD100;
   position: relative;
   text-align: center;
 }

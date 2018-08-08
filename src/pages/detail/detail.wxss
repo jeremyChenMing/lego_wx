@@ -114,17 +114,7 @@
 .auth .btnBox {
   text-align: center;
 }
-.auth .btnBox button[disabled] {
-  color: rgba(0, 0, 0, 0.2);
-}
-.auth .btnBox .opt {
-  color: #fff;
-}
-.auth .btnBox .tou {
-  padding: 0 51.93236715rpx;
-}
 .auth .btnBox .puts {
-  background-color: #FFDA33;
   margin-right: 24.15458937rpx;
 }
 textarea {
@@ -147,9 +137,6 @@ textarea {
 .discussTt .disBtn {
   text-align: right;
 }
-.discussTt .disBtn button {
-  background-color: #FFDA33;
-}
 .btmBox {
   padding: 27.17391304rpx;
 }
@@ -169,6 +156,7 @@ textarea {
 .btmBox .discussBox .img image {
   width: 78.50241546rpx;
   height: 78.50241546rpx;
+  border-radius: 50%;
 }
 .btmBox .discussBox .content {
   flex: 1;
@@ -214,7 +202,7 @@ textarea {
 }
 .btmBox .discussBox .content .leaveBtn {
   text-align: right;
-  padding: 10rpx 0;
+  padding: 0 20rpx;
 }
 .btmBox .discussBox .content .leaveBtn > image {
   display: inline-block;
@@ -229,6 +217,12 @@ textarea {
   padding-left: 10rpx;
   vertical-align: middle;
   font-size: 19.3236715rpx;
+}
+.btmBox .discussBox .content .leaveBtn .icon {
+  font-size: 25rpx;
+}
+.btmBox .discussBox .content .leaveBtn .iconC {
+  color: #ccc;
 }
 .btmBox .discussBox .content .text-wrp {
   display: none;
@@ -245,9 +239,6 @@ textarea {
 .btmBox .discussBox .content .push {
   padding-top: 10rpx;
   text-align: right;
-}
-.btmBox .discussBox .content .push button {
-  font-size: 19.3236715rpx;
 }
 .active {
   background-color: #e0aa00!important;

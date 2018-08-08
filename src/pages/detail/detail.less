@@ -133,26 +133,11 @@
   }
   .btnBox{
     text-align: center;
-    button[disabled]{
-      color: rgba(0, 0, 0, .2);
-    }
-    .opt{
-      color: #fff;
-    }
-    .tou{
-      
-      padding: 0 86rpx / @base;
-      // font-size: 54rpx / @base;
-    }
     .puts{
-      background-color: @theme;
       margin-right: 40rpx / @base;
     }
-    
   }
 }
-
-
 
 textarea{
   box-sizing: border-box;
@@ -175,9 +160,6 @@ textarea{
   }
   .disBtn{
     text-align: right;
-    button{
-      background-color: @theme;
-    }
   }
 }
 
@@ -199,7 +181,7 @@ textarea{
       image{
         width: 130rpx / @base;
         height: 130rpx / @base;
-
+        border-radius: 50%;
       }
     }
     .content{
@@ -247,8 +229,7 @@ textarea{
 
       .leaveBtn{
         text-align: right;
-        padding: 10rpx 0;
-        // line-height: 32px;
+        padding: 0 20rpx;
         & > image{
           display: inline-block;
           vertical-align: middle;
@@ -263,7 +244,12 @@ textarea{
           vertical-align: middle;
           font-size: 32rpx / @base;
         }
-
+        .icon{
+          font-size: 25rpx;
+        }
+        .iconC{
+          color: #ccc;
+        }
       }
       
       .text-wrp{
@@ -280,15 +266,8 @@ textarea{
       }
       .push{
         padding-top: 10rpx;
-        text-align: right;
-        button{
-          // color: #c9c9c9;
-          font-size: 32rpx / @base;
-        }
-        
+        text-align: right;     
       }
-
-
     }
   }
 }
@@ -299,7 +278,6 @@ textarea{
 .red{
   color: #FF0042;
 }
-
 
 
 

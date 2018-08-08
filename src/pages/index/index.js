@@ -1,15 +1,16 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const { getProducts, getPersonMes } = require('../../utils/fetch')
+const { getProducts, getPersonMes, givePraise, HOST } = require('../../utils/fetch')
 const { unique, formatTimeCH } = require('../../utils/util')
-// app.globalData.userInfo
 
 Page({
   data: {
     tab: 1,
+    host: HOST,
     authorIdJSON: {},
     cells: [],
+    loading: false,
     dots: false,
     auto: false,
     current: 2,
@@ -34,7 +35,8 @@ Page({
           item['CHN'] = formatTimeCH(item.create_at)
           arr.push(item.author_id)
         })
-        this.mapAuthor(unique(arr));
+        // this.mapAuthor(unique(arr));
+        this.getGlobal()
         this.setData({
           cells: data.data
         })
@@ -44,6 +46,12 @@ Page({
         })
       }
     })
+
+    let animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease-in',
+    })
+    this.animation = animation
 
   },
   mapAuthor: function (mes) {
@@ -77,7 +85,6 @@ Page({
   },
 
   handleNav: function(e) {
-    console.log(e)
     const dataSet = e.currentTarget.dataset
     this.setData({
       tab: dataSet.id
@@ -109,8 +116,67 @@ Page({
       path: '/pages/index/index?id=123',
       imageUrl: '/images/produce.png',
     }
+  },
+  noPrise: function () {
+    this.setData({
+      current: this.data.current + 1
+    })
+  },
+  prise: function (e) {
+    const item = e.currentTarget.dataset;
+    const that = this;
+    this.setData({
+      loading: true
+    })
+    givePraise(item.id).then( data => {
+      if (data.statusCode === 200) {
+        this.data.cells[item.index].num_votes = this.data.cells[item.index].num_votes + 1
+        this.animation.scale(2,2).opacity(.5).step();
+        this.animation.scale(1,1).opacity(1).step();
+        this.setData({
+          cells: this.data.cells, 
+          animationData: this.animation.export()
+        })
+        setTimeout(function () {
+          that.setData({
+            loading: false
+          })
+        }, 1600)
+      }else{
+        wx.showToast({
+          icon: 'none',
+          mask: true,
+          title: data.data.message
+        })
+        setTimeout(function () {
+          that.setData({
+            loading: false
+          })
+        }, 600)
+      }
+    })
+    
+  },
+  getGlobal: function () {
+    const that = this;
+    if (app.globalData.keys) {
+      this.setData({
+        authorIdJSON: app.globalData.keys
+      })
+    }else{
+      wx.getStorage({
+        key: 'keys',
+        success: function (res) {
+          that.setData({
+            authorIdJSON: res.data
+          })
+        },
+        fail: function (res) {
+          console.log(res)
+        }
+      })
+    }
   }
-
 
 
 
