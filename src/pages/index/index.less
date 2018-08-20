@@ -165,12 +165,17 @@ page{
     text-align: center;
     & > image{
       width: 100%;
+      flex: 1;
     }
     border-radius: 10rpx;
     overflow: hidden;
     transform-origin: 50% 50%;
     transform: scale(.8, .8);
     transition: transform linear .5s;
+
+    display: flex;
+    flex-direction: column;
+
   }
   .scal{
     transform: scale(1, 1);

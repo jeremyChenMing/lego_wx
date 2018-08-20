@@ -11,10 +11,11 @@ App({
     wx.getStorage({
       key: 'keys',
       success: function (res) {
+        // console.log(res, '$%$%$')
         that.globalData['keys'] = res.data
       },
       fail: function (res) {
-        console.log(res)
+        // console.log(res, '$%$%$')
         getUsers().then( data => {
           if (data.statusCode === 200) {
             let arr = {};

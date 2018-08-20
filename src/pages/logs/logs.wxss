@@ -144,6 +144,7 @@ page {
 .content .cellCon .newBody {
   position: relative;
   line-height: 42rpx;
+  height: 42rpx;
   text-align: center;
   font-size: 16.90821256rpx;
   color: #c9c9c9;

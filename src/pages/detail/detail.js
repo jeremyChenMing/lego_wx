@@ -27,7 +27,8 @@ Page({
     ],
 
     firValue: undefined,
-    dis: true
+    dis: true,
+    srcs: null
   },
   onShow: function (e) {
     // console.log(e, 'onShow')
@@ -94,9 +95,12 @@ Page({
       }
     })
   },
-
+  links: function () {
+    wx.navigateTo({
+      url: `../view/view`
+    })
+  },
   prise: function () {
-    console.log()
     const that = this;
     this.setData({
       loading: true
@@ -131,7 +135,7 @@ Page({
     })
   },
   onShareAppMessage: function (res) {
-    // console.log(res)
+    console.log(res)
     // console.log(this.data.person)
     // console.log(this.data.message)
     // console.log(this.data.params)
@@ -143,7 +147,7 @@ Page({
     return {
       title: `${this.data.message.title} -- ${this.data.person.nickname}`,
       path: `/pages/detail/detail?id=${this.data.params.id}&author=${this.data.params.author}`,
-      imageUrl: this.data.message.images[0].url,
+      imageUrl: `${HOST}${this.data.message.images[0].url}`,
       success: (res) => {
         console.log(res, '---')
       },
@@ -178,12 +182,19 @@ Page({
     console.log(this.data.params)
     console.log(this.data.firValue)
 
-    // addFirComments(this.data.params.id, {content: this.data.firValue}).then( data => {
-    //   if (data.statusCode === 200) {
-        // this.commentsList()
-        // this.setData({dis: false})
-    //   }
-    // })
+    addFirComments(this.data.params.id, {content: this.data.firValue}).then( data => {
+      this.setData({dis: true})
+      if (data.statusCode === 200) {
+        this.commentsList()
+      }else{
+        wx.showToast({
+          icon: 'none',
+          mask: true,
+          title: data.data.message
+        })
+      }
+
+    })
   },
   getGlobal: function (id) {
     const that = this;

@@ -66,6 +66,7 @@ Page({
   },
 
   getGlobal: function () {
+    console.log('getGlobaldata=')
     const that = this;
     if (app.globalData.userInfo) {
       console.log('has')
