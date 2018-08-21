@@ -18,7 +18,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    src:" /images/avart.png",
+    src:" /images/touxiang.png",
     proTitle: [
       {name: '投票阶段'},
       {name: '众筹阶段'},

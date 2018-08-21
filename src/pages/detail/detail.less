@@ -1,52 +1,47 @@
-
-@base: 1.656rpx;
-@theme: #FFDA33;
-
 .box{
   padding: 60rpx 0rpx;
   .bt{
-    padding-bottom: 40rpx / @base;
-    padding-left: 68rpx / @base;
-    padding-right: 68rpx / @base;
+    padding-bottom: 40rpx;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
     border-bottom: 1px solid #c9c9c9;
   }
   .progress{
-    padding: 0 50rpx;
-    margin-bottom: 40rpx / @base;
+    padding: 0 20rpx;
+    margin-bottom: 35rpx;
   }
 
   .proBox{
-    padding: 0 50rpx / @base;
+    padding: 0 30rpx;
   }
 
   .gress{
     display: flex;
-    margin-top: -50rpx / @base;
+    margin-top: -34rpx;
     .cell{
-      font-size: 24rpx / @base;
-      width: 160rpx / @base;
+      width: 110rpx;
       text-align: center;
     }
     .mou{
       flex: 1;
     }
     .dot{
-      width: 86rpx / @base;
-      height: 86rpx / @base;
+      width: 52rpx;
+      height: 52rpx;
       background-color: #fff;
       border-radius: 50%;
       margin: 0 auto;
       border: 1px solid #ececec;
       text-align: center;
-      line-height: 86rpx / @base;
+      line-height: 52rpx;
       color: #ececec;
-      font-size: 25rpx / @base;
+      font-size: 20rpx;
       .icons{
-        // font-size: 28rpx / @base;
+
       }
     }
     .exp{
-      font-size: 17rpx / @base;
+      font-size: 10rpx;
       color: #585858;
     }
     .ext{
@@ -54,7 +49,7 @@
       display: inline-block;
       margin: 10rpx 0 6rpx;
       font-weight: bold;
-      font-size: 27rpx / @base;
+      font-size: 16rpx;
     }
     .acdot{
       background-color: #FFDA33;
@@ -81,21 +76,21 @@
     }
     .num{
       color: #585858;
-      font-size: 46rpx / @base;
+      font-size: 35rpx;
     }
     .name{
-      font-size: 82rpx / @base;
+      font-size: 50rpx;
       color: #000;
-      margin: 35rpx / @base 0;
+      margin: 20rpx 0;
     }
     .info{
-      font-size: 25rpx / @base;
+      font-size: 15rpx;
       color: #585858;
-      padding-bottom: 40rpx;
+      padding-bottom: 30rpx;
     }
   }
   .bodys{
-    padding: 40rpx / @base 0;
+    padding: 30rpx 0;
     display: flex;
     align-items: top;
     & > view{
@@ -107,19 +102,19 @@
     .left{
       overflow: hidden;
       image{
-        width: 100rpx / @base;
-        height: 100rpx / @base;
+        width: 60rpx;
+        height: 60rpx;
         border-radius: 50%;
       }
     }
     .mid{
       padding: 0 20rpx;
       .title{
-        font-size: 36rpx / @base;
+        font-size: 22rpx;
         color: #000;
       }
       .ttl{
-        font-size: 21rpx / @base;
+        font-size: 14rpx;
         color: #585858;
         margin-top: 5rpx;
       }
@@ -127,14 +122,23 @@
     .last{
       flex: 1;
       text-align: right;
-      font-size: 28rpx / @base;
+      font-size: 20rpx;
       color: #c9c9c9;
     }
   }
   .btnBox{
-    text-align: center;
-    .puts{
-      margin-right: 40rpx / @base;
+    display: flex;
+    & > view{
+      flex: 1;
+      & > button{
+        width: 90%;
+      }
+    }
+    .left{
+      text-align: left;
+    }
+    .right{
+      text-align: right;
     }
   }
 }
@@ -147,28 +151,31 @@ textarea{
 }
 .discuss{
   text-align: center;
-  padding: 80rpx / @base 0;
-  font-size: 42rpx / @base;
+  padding: 55rpx;
+  font-size: 25rpx;
 }
 .discussTt{
   
   textarea{
     background-color: #f5f5f5;
-    height: 200rpx;
+    height: 160rpx;
     margin-bottom: 20rpx;
-    font-size: 32rpx / @base;
+    font-size: 25rpx;
   }
   .disBtn{
     text-align: right;
+    & > button{
+      width: 150rpx;
+    }
   }
 }
 
 
 
 .btmBox{
-  padding: 45rpx / @base;
+  padding: 40rpx;
   .total{
-    font-size: 32rpx / @base;
+    font-size: 20rpx;
     color: #c9c9c9;
   }
   .discussBox{
@@ -177,26 +184,26 @@ textarea{
     padding-bottom: 0;
     border-bottom: 1px solid #f4f4f4;
     .img{
-      width: 130rpx / @base;
+      width: 80rpx;
       image{
-        width: 130rpx / @base;
-        height: 130rpx / @base;
+        width: 80rpx;
+        height: 80rpx;
         border-radius: 50%;
       }
     }
     .content{
       flex: 1;
-      padding-left: 40rpx / @base;
+      padding-left: 20rpx;
       width: 100%;
       .tt{
-        font-size: 32rpx / @base;
+        font-size: 20rpx;
         color: #000;
         & > text{
           color: #c9c9c9;
         }
       }
       .leave{
-        font-size: 32rpx / @base;
+        font-size: 20rpx;
         color: #585858;
       }
 
@@ -204,8 +211,8 @@ textarea{
         background-color: #f4f4f4;
         position: relative;
         margin-top: 20rpx;
-        padding: 20rpx / @base;
-        border-radius: 5rpx;
+        padding: 20rpx;
+        border-radius: 10rpx;
         &::before{
           content: '';
           position: absolute;
@@ -219,7 +226,7 @@ textarea{
           border-bottom: 20rpx solid #f4f4f4;
         }
         .ott{
-          font-size: 32rpx / @base;
+          font-size: 18rpx;
           .leaveO{
             display: block;
             color: #585858;
@@ -230,22 +237,14 @@ textarea{
       .leaveBtn{
         text-align: right;
         padding: 0 20rpx;
-        & > image{
-          display: inline-block;
-          vertical-align: middle;
-          height: 45rpx / @base;
-          width: 45rpx / @base;
-          margin-left: 40rpx;
-        }
         & > text{
           display: inline-block;
           color: #c9c9c9;
           padding-left: 10rpx;
           vertical-align: middle;
-          font-size: 32rpx / @base;
         }
         .icon{
-          font-size: 25rpx;
+          font-size: 30rpx;
         }
         .iconC{
           color: #ccc;
@@ -258,15 +257,21 @@ textarea{
       .otLeave{
         background-color: #f5f5f5;
         border-radius: 5px;
-        font-size: 32rpx / @base;
-        height: 200rpx;
+        font-size: 25rpx;
+        height: 160rpx;
       }
       .showT{
         display: block;
       }
       .push{
         padding-top: 10rpx;
-        text-align: right;     
+        text-align: right;
+        & > button{
+          height: 40rpx;
+          line-height: 40rpx;
+          padding-top: 5rpx 20rpx;
+          font-size: 20rpx;
+        }     
       }
     }
   }
@@ -279,7 +284,12 @@ textarea{
   color: #FF0042;
 }
 .center{
-  text-align: center;
+  padding-top: 20rpx;
+  button{
+    width: 100%;
+    background-color: #0096FF;
+    color: #fff;
+  }
 }
 
 

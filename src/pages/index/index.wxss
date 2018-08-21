@@ -28,8 +28,13 @@ page {
 }
 .nav {
   display: flex;
-  background-color: #fff;
   padding-top: 20rpx;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
 }
 .nav view:nth-child(1) {
   padding-right: 20rpx;
@@ -39,12 +44,12 @@ page {
 }
 .nav .tab {
   flex: 1;
-  font-size: 32.00483092rpx;
+  font-size: 32rpx;
 }
 .nav .tab > text {
   display: inline-block;
   padding: 0rpx 20rpx;
-  padding-bottom: 29.58937198rpx;
+  padding-bottom: 30rpx;
   border-bottom: 1px solid transparent;
   color: #c9c9c9;
 }
@@ -56,31 +61,30 @@ page {
   text-align: right;
 }
 .content {
-  padding: 50.72463768rpx 10rpx;
   display: flex;
   flex-wrap: wrap;
+  padding: 0 10rpx;
 }
 .content .cell {
   box-sizing: border-box;
   width: 50%;
-  margin-bottom: 40rpx;
+  margin-bottom: 26rpx;
   padding: 0 10rpx;
 }
 .content .cellCon {
   background-color: #fff;
 }
 .content .cellCon image {
-  height: 266.30434783rpx;
+  height: 267rpx;
   width: 100%;
 }
 .content .cellCon .conText {
-  padding: 33.21256039rpx 24.15458937rpx;
-  font-size: 19.3236715rpx;
+  padding: 25rpx;
 }
 .content .cellCon .text {
   text-align: center;
   border-bottom: 1px solid #e3e3e3;
-  padding-bottom: 10rpx;
+  padding-bottom: 20rpx;
 }
 .content .cellCon .text > view {
   white-space: nowrap;
@@ -88,61 +92,81 @@ page {
   overflow: hidden;
 }
 .content .cellCon .text view:nth-child(1) {
-  font-size: 18.11594203rpx;
+  font-size: 14rpx;
   color: #585858;
 }
 .content .cellCon .text view:nth-child(2) {
-  font-size: 20.53140097rpx;
+  font-size: 22rpx;
   color: #282828;
-  margin: 12.07729469rpx 0 20.53140097rpx;
+  margin: 10rpx 0 20rpx;
 }
 .content .cellCon .text view:nth-child(3) {
-  font-size: 15.70048309rpx;
+  font-size: 14rpx;
   color: #585858;
   padding: 0 40rpx;
 }
 .content .cellCon .bodys {
-  padding-top: 16.30434783rpx;
+  padding-top: 20rpx;
   display: flex;
   align-items: center;
 }
 .content .cellCon .bodys .left {
-  width: 41.06280193rpx;
-  height: 41.06280193rpx;
+  width: 42rpx;
+  height: 42rpx;
   border-radius: 50%;
 }
 .content .cellCon .bodys .mid {
   padding: 0 20rpx;
 }
 .content .cellCon .bodys .mid .title {
-  font-size: 15.09661836rpx;
+  font-size: 15rpx;
   color: #000;
 }
 .content .cellCon .bodys .mid .ttl {
-  font-size: 8.45410628rpx;
+  font-size: 10rpx;
   color: #585858;
   margin-top: 5rpx;
 }
 .content .cellCon .bodys .last {
   flex: 1;
   text-align: right;
-  font-size: 13.88888889rpx;
+  font-size: 14rpx;
   color: #c9c9c9;
 }
 .content .cellCon .bodys .last image {
   height: 13rpx;
   width: 16rpx;
 }
+.boxes {
+  height: 100vh;
+}
+.mainsT {
+  padding-top: 116rpx;
+}
+.mains {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.mains .top {
+  height: 96rpx;
+  background-color: transparent;
+}
+.mains .contain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 .cons {
   position: relative;
-  margin-top: 50.12077295rpx;
-  height: 884.66183575rpx;
+  height: 885rpx;
+  width: 100%;
 }
 .cons swiper {
   height: 100%;
 }
 .cons .cell {
-  width: 591.78743961rpx;
   margin: 0 auto;
   background-color: #fff;
   height: 100%;
@@ -163,26 +187,27 @@ page {
   transform: scale(1, 1);
 }
 .cons .mes {
-  padding: 42.2705314rpx;
+  padding: 42rpx;
 }
 .cons .mes .proMes {
   padding-bottom: 20rpx;
   border-bottom: 1px solid #e3e3e3;
 }
 .cons .mes .proMes .til {
-  font-size: 30.19323671rpx;
+  font-size: 35rpx;
   color: #585858;
 }
 .cons .mes .proMes .info {
-  font-size: 36.23188406rpx;
+  font-size: 36rpx;
   color: #282828;
   font-weight: bold;
+  margin-top: 10rpx;
 }
 .cons .btnBox {
-  padding-top: 24.15458937rpx;
+  padding-top: 30rpx;
 }
 .cons .btnBox button {
-  width: 237.31884058rpx;
+  width: 240rpx;
 }
 .cons .btnBox button:nth-child(1) {
   background-color: #FFD100;
@@ -192,32 +217,32 @@ page {
   background-color: #e0aa00!important;
 }
 .cons .bodys {
-  padding: 24.15458937rpx 0;
+  padding: 28rpx 0;
   display: flex;
   align-items: center;
 }
 .cons .bodys .left {
-  width: 60.38647343rpx;
-  height: 60.38647343rpx;
+  width: 65rpx;
+  height: 65rpx;
   border-radius: 50%;
 }
 .cons .bodys .mid {
   padding: 0 20rpx;
 }
 .cons .bodys .mid .title {
-  font-size: 19.3236715rpx;
+  font-size: 22rpx;
   color: #000;
   text-align: left;
   font-weight: bold;
 }
 .cons .bodys .mid .ttl {
-  font-size: 13.28502415rpx;
+  font-size: 14rpx;
   color: #585858;
 }
 .cons .bodys .last {
   flex: 1;
   text-align: right;
-  font-size: 18.11594203rpx;
+  font-size: 20rpx;
   color: #c9c9c9;
 }
 .cons .bodys .last image {

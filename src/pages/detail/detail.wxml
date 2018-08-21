@@ -65,9 +65,12 @@
         </view>
 
         <view class="btnBox">
-          <button disabled="{{loading}}" bindtap="prise" hover-class="active" type="primary" size="mini" class="tou puts">给TA投票</button>
-          <button disabled="true" type="warn" size="mini" class="tou">支持众筹</button>
-          
+          <view class="left">
+           <button disabled="{{loading}}" bindtap="prise" hover-class="active" type="primary" size="mini" class="tou">给TA投票</button> 
+          </view>
+          <view class="right">
+           <button disabled="true" type="warn" size="mini" class="tou">支持众筹</button> 
+          </view>
         </view>
         <view class="center">
           <button bindtap="links" size="mini">关注公众号</button>
@@ -76,9 +79,9 @@
         <view class="discuss">讨论区</view>
       </view>
       <view class="discussTt">
-        <textarea value="{{firValue}}" bindinput="valueChange" maxlength="100" placeholder="请输入内容" maxlength="100"/>
+        <textarea value="{{firValue}}" bindinput="valueChange" maxlength="100" placeholder="说点什么..." maxlength="100"/>
         <view class="disBtn">
-          <button disabled="{{(firValue && dis) ? false : true}}" bindtap="takeComment" type="primary" size="mini" class="tou1">评论</button>
+          <button disabled="{{(firValue && dis) ? false : true}}" bindtap="takeComment" type="primary" size="mini">评论</button>
         </view>
       </view>
     </view>

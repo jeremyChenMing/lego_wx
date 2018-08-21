@@ -12,25 +12,25 @@ page {
   text-align: center;
 }
 .messageBox .bg .head {
-  width: 153.98550725rpx;
-  height: 153.98550725rpx;
+  width: 156rpx;
+  height: 156rpx;
   position: absolute;
   left: 50%;
-  margin-left: -76.99275362rpx;
-  bottom: -76.99275362rpx;
+  margin-left: -78rpx;
+  bottom: -78rpx;
   border-radius: 50%;
 }
 .messageBox .mes {
-  padding: 76.99275362rpx 0rpx 40rpx;
+  padding: 78rpx 0rpx 40rpx;
   text-align: center;
 }
 .messageBox .mes .title {
-  font-size: 35.62801932rpx;
+  font-size: 36rpx;
   color: #282828;
   margin: 15rpx 0;
 }
 .messageBox .mes .tt {
-  font-size: 22.9468599rpx;
+  font-size: 24rpx;
   color: #5e5e5e;
   padding: 0 40rpx;
 }
@@ -47,12 +47,12 @@ page {
 }
 .nav .tab {
   flex: 1;
-  font-size: 32.00483092rpx;
+  font-size: 32rpx;
 }
 .nav .tab > text {
   display: inline-block;
   padding: 0rpx 20rpx;
-  padding-bottom: 29.58937198rpx;
+  padding-bottom: 30rpx;
   border-bottom: 1px solid transparent;
   color: #c9c9c9;
 }
@@ -64,7 +64,7 @@ page {
   text-align: right;
 }
 .content {
-  padding: 50.72463768rpx 10rpx;
+  padding: 50rpx 10rpx;
   display: flex;
   flex-wrap: wrap;
 }
@@ -78,12 +78,11 @@ page {
   background-color: #fff;
 }
 .content .cellCon image {
-  height: 266.30434783rpx;
+  height: 267rpx;
   width: 100%;
 }
 .content .cellCon .conText {
-  padding: 33.21256039rpx 24.15458937rpx;
-  font-size: 19.3236715rpx;
+  padding: 25rpx;
 }
 .content .cellCon .text {
   text-align: center;
@@ -96,45 +95,45 @@ page {
   overflow: hidden;
 }
 .content .cellCon .text view:nth-child(1) {
-  font-size: 18.11594203rpx;
+  font-size: 14rpx;
   color: #585858;
 }
 .content .cellCon .text view:nth-child(2) {
-  font-size: 20.53140097rpx;
+  font-size: 22rpx;
   color: #282828;
-  margin: 12.07729469rpx 0 20.53140097rpx;
+  margin: 10rpx 0 20rpx;
 }
 .content .cellCon .text view:nth-child(3) {
-  font-size: 14.49275362rpx;
+  font-size: 14rpx;
   color: #585858;
   padding: 0 40rpx;
 }
 .content .cellCon .bodys {
-  padding-top: 16.30434783rpx;
+  padding-top: 20rpx;
   display: flex;
   align-items: center;
 }
 .content .cellCon .bodys .left {
-  width: 41.06280193rpx;
-  height: 41.06280193rpx;
+  width: 42rpx;
+  height: 42rpx;
   border-radius: 50%;
 }
 .content .cellCon .bodys .mid {
   padding: 0 20rpx;
 }
 .content .cellCon .bodys .mid .title {
-  font-size: 15.09661836rpx;
+  font-size: 15rpx;
   color: #000;
 }
 .content .cellCon .bodys .mid .ttl {
-  font-size: 8.45410628rpx;
+  font-size: 10rpx;
   color: #585858;
   margin-top: 5rpx;
 }
 .content .cellCon .bodys .last {
   flex: 1;
   text-align: right;
-  font-size: 13.88888889rpx;
+  font-size: 14rpx;
   color: #c9c9c9;
 }
 .content .cellCon .bodys .last image {
@@ -146,7 +145,7 @@ page {
   line-height: 42rpx;
   height: 42rpx;
   text-align: center;
-  font-size: 16.90821256rpx;
+  font-size: 14rpx;
   color: #c9c9c9;
 }
 .content .cellCon .newBody image {
@@ -154,7 +153,7 @@ page {
   width: 16rpx;
 }
 .content .cellCon .newBody > text {
-  font-size: 10.26570048rpx;
+  font-size: 14rpx;
   position: absolute;
   right: 10rpx;
   bottom: 0;

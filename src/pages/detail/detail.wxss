@@ -2,44 +2,43 @@
   padding: 60rpx 0rpx;
 }
 .box .bt {
-  padding-bottom: 24.15458937rpx;
-  padding-left: 41.06280193rpx;
-  padding-right: 41.06280193rpx;
+  padding-bottom: 40rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
   border-bottom: 1px solid #c9c9c9;
 }
 .box .progress {
-  padding: 0 50rpx;
-  margin-bottom: 24.15458937rpx;
+  padding: 0 20rpx;
+  margin-bottom: 35rpx;
 }
 .box .proBox {
-  padding: 0 30.19323671rpx;
+  padding: 0 30rpx;
 }
 .box .gress {
   display: flex;
-  margin-top: -30.19323671rpx;
+  margin-top: -34rpx;
 }
 .box .gress .cell {
-  font-size: 14.49275362rpx;
-  width: 96.61835749rpx;
+  width: 110rpx;
   text-align: center;
 }
 .box .gress .mou {
   flex: 1;
 }
 .box .gress .dot {
-  width: 51.93236715rpx;
-  height: 51.93236715rpx;
+  width: 52rpx;
+  height: 52rpx;
   background-color: #fff;
   border-radius: 50%;
   margin: 0 auto;
   border: 1px solid #ececec;
   text-align: center;
-  line-height: 51.93236715rpx;
+  line-height: 52rpx;
   color: #ececec;
-  font-size: 15.09661836rpx;
+  font-size: 20rpx;
 }
 .box .gress .exp {
-  font-size: 10.26570048rpx;
+  font-size: 10rpx;
   color: #585858;
 }
 .box .gress .ext {
@@ -47,7 +46,7 @@
   display: inline-block;
   margin: 10rpx 0 6rpx;
   font-weight: bold;
-  font-size: 16.30434783rpx;
+  font-size: 16rpx;
 }
 .box .gress .acdot {
   background-color: #FFDA33;
@@ -68,20 +67,20 @@
 }
 .auth .head .num {
   color: #585858;
-  font-size: 27.77777778rpx;
+  font-size: 35rpx;
 }
 .auth .head .name {
-  font-size: 49.51690821rpx;
+  font-size: 50rpx;
   color: #000;
-  margin: 21.1352657rpx 0;
+  margin: 20rpx 0;
 }
 .auth .head .info {
-  font-size: 15.09661836rpx;
+  font-size: 15rpx;
   color: #585858;
-  padding-bottom: 40rpx;
+  padding-bottom: 30rpx;
 }
 .auth .bodys {
-  padding: 24.15458937rpx 0;
+  padding: 30rpx 0;
   display: flex;
   align-items: top;
 }
@@ -89,33 +88,42 @@
   overflow: hidden;
 }
 .auth .bodys .left image {
-  width: 60.38647343rpx;
-  height: 60.38647343rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius: 50%;
 }
 .auth .bodys .mid {
   padding: 0 20rpx;
 }
 .auth .bodys .mid .title {
-  font-size: 21.73913043rpx;
+  font-size: 22rpx;
   color: #000;
 }
 .auth .bodys .mid .ttl {
-  font-size: 12.68115942rpx;
+  font-size: 14rpx;
   color: #585858;
   margin-top: 5rpx;
 }
 .auth .bodys .last {
   flex: 1;
   text-align: right;
-  font-size: 16.90821256rpx;
+  font-size: 20rpx;
   color: #c9c9c9;
 }
 .auth .btnBox {
-  text-align: center;
+  display: flex;
 }
-.auth .btnBox .puts {
-  margin-right: 24.15458937rpx;
+.auth .btnBox > view {
+  flex: 1;
+}
+.auth .btnBox > view > button {
+  width: 90%;
+}
+.auth .btnBox .left {
+  text-align: left;
+}
+.auth .btnBox .right {
+  text-align: right;
 }
 textarea {
   box-sizing: border-box;
@@ -125,23 +133,26 @@ textarea {
 }
 .discuss {
   text-align: center;
-  padding: 48.30917874rpx 0;
-  font-size: 25.36231884rpx;
+  padding: 55rpx;
+  font-size: 25rpx;
 }
 .discussTt textarea {
   background-color: #f5f5f5;
-  height: 200rpx;
+  height: 160rpx;
   margin-bottom: 20rpx;
-  font-size: 19.3236715rpx;
+  font-size: 25rpx;
 }
 .discussTt .disBtn {
   text-align: right;
 }
+.discussTt .disBtn > button {
+  width: 150rpx;
+}
 .btmBox {
-  padding: 27.17391304rpx;
+  padding: 40rpx;
 }
 .btmBox .total {
-  font-size: 19.3236715rpx;
+  font-size: 20rpx;
   color: #c9c9c9;
 }
 .btmBox .discussBox {
@@ -151,35 +162,35 @@ textarea {
   border-bottom: 1px solid #f4f4f4;
 }
 .btmBox .discussBox .img {
-  width: 78.50241546rpx;
+  width: 80rpx;
 }
 .btmBox .discussBox .img image {
-  width: 78.50241546rpx;
-  height: 78.50241546rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
 }
 .btmBox .discussBox .content {
   flex: 1;
-  padding-left: 24.15458937rpx;
+  padding-left: 20rpx;
   width: 100%;
 }
 .btmBox .discussBox .content .tt {
-  font-size: 19.3236715rpx;
+  font-size: 20rpx;
   color: #000;
 }
 .btmBox .discussBox .content .tt > text {
   color: #c9c9c9;
 }
 .btmBox .discussBox .content .leave {
-  font-size: 19.3236715rpx;
+  font-size: 20rpx;
   color: #585858;
 }
 .btmBox .discussBox .content .other {
   background-color: #f4f4f4;
   position: relative;
   margin-top: 20rpx;
-  padding: 12.07729469rpx;
-  border-radius: 5rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
 }
 .btmBox .discussBox .content .other::before {
   content: '';
@@ -194,7 +205,7 @@ textarea {
   border-bottom: 20rpx solid #f4f4f4;
 }
 .btmBox .discussBox .content .other .ott {
-  font-size: 19.3236715rpx;
+  font-size: 18rpx;
 }
 .btmBox .discussBox .content .other .ott .leaveO {
   display: block;
@@ -204,22 +215,14 @@ textarea {
   text-align: right;
   padding: 0 20rpx;
 }
-.btmBox .discussBox .content .leaveBtn > image {
-  display: inline-block;
-  vertical-align: middle;
-  height: 27.17391304rpx;
-  width: 27.17391304rpx;
-  margin-left: 40rpx;
-}
 .btmBox .discussBox .content .leaveBtn > text {
   display: inline-block;
   color: #c9c9c9;
   padding-left: 10rpx;
   vertical-align: middle;
-  font-size: 19.3236715rpx;
 }
 .btmBox .discussBox .content .leaveBtn .icon {
-  font-size: 25rpx;
+  font-size: 30rpx;
 }
 .btmBox .discussBox .content .leaveBtn .iconC {
   color: #ccc;
@@ -230,8 +233,8 @@ textarea {
 .btmBox .discussBox .content .otLeave {
   background-color: #f5f5f5;
   border-radius: 5px;
-  font-size: 19.3236715rpx;
-  height: 200rpx;
+  font-size: 25rpx;
+  height: 160rpx;
 }
 .btmBox .discussBox .content .showT {
   display: block;
@@ -240,6 +243,12 @@ textarea {
   padding-top: 10rpx;
   text-align: right;
 }
+.btmBox .discussBox .content .push > button {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-top: 5rpx 20rpx;
+  font-size: 20rpx;
+}
 .active {
   background-color: #e0aa00!important;
 }
@@ -247,5 +256,10 @@ textarea {
   color: #FF0042;
 }
 .center {
-  text-align: center;
+  padding-top: 20rpx;
+}
+.center button {
+  width: 100%;
+  background-color: #0096FF;
+  color: #fff;
 }

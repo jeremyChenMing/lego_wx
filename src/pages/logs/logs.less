@@ -1,11 +1,7 @@
 
-
-@base: 1.656rpx;
 page{
   background-color: #f5f5f5;
 }
-
-
 
 .messageBox{
   min-height: 100rpx;
@@ -16,25 +12,25 @@ page{
     position: relative;
     text-align: center;
     .head{
-      width: 255rpx / @base;
-      height: 255rpx / @base;
+      width: 156rpx;
+      height: 156rpx;
       position: absolute;
       left: 50%;
-      margin-left: -255rpx / 2 / @base;
-      bottom: -255rpx / 2 / @base;
+      margin-left: -78rpx;
+      bottom: -78rpx;
       border-radius: 50%;
     }
   }
   .mes{
-    padding: 255rpx / 2 / @base 0rpx 40rpx;
+    padding: 78rpx 0rpx 40rpx;
     text-align: center;
     .title{
-      font-size: 59rpx / @base;
+      font-size: 36rpx;
       color: #282828;
       margin: 15rpx 0;
     }
     .tt{
-      font-size: 38rpx / @base;
+      font-size: 24rpx;
       color: #5e5e5e;
       padding: 0 40rpx;
     }
@@ -53,11 +49,11 @@ page{
   };
   .tab{
     flex: 1;
-    font-size: 53rpx / @base;
+    font-size: 32rpx;
     & > text{
       display: inline-block;
       padding: 0rpx 20rpx;
-      padding-bottom: 49rpx / @base;
+      padding-bottom: 30rpx;
       border-bottom: 1px solid transparent;
       color: #c9c9c9;
     }
@@ -72,25 +68,23 @@ page{
 }
 
 .content{
-  padding: 84rpx / @base 10rpx;
+  padding: 50rpx 10rpx;
   display: flex;
   flex-wrap: wrap;
   .cell{
     box-sizing: border-box;
     width: 50%;
     margin-bottom: 40rpx;
-    // height: 834rpx / @base;
     padding: 0 10rpx;
   }
   .cellCon{
     background-color: #fff;
     image{
-      height: 441rpx / @base;
+      height: 267rpx;
       width: 100%;
     }
     .conText{
-      padding: 55rpx / @base 40rpx / @base;
-      font-size: 32rpx / @base;
+      padding: 25rpx;
     }
     .text{
       text-align: center;
@@ -102,38 +96,38 @@ page{
         overflow:hidden;
       }
       view:nth-child(1){
-        font-size: 30rpx / @base;
+        font-size: 14rpx;
         color: #585858;
       };
       view:nth-child(2){
-        font-size: 34rpx / @base;
+        font-size: 22rpx;
         color: #282828;
-        margin: 20rpx / @base 0 34rpx / @base;
+        margin: 10rpx 0 20rpx;
       };
       view:nth-child(3){
-        font-size: 24rpx / @base;
+        font-size: 14rpx;
         color: #585858;
         padding: 0 40rpx;
       };
     }
 
     .bodys{
-      padding-top: 27rpx / @base;
+      padding-top: 20rpx;
       display: flex;
       align-items: center;
       .left{
-        width: 68rpx / @base;
-        height: 68rpx / @base;
+        width: 42rpx;
+        height: 42rpx;
         border-radius: 50%;
       }
       .mid{
         padding: 0 20rpx;
         .title{
-          font-size: 25rpx / @base;
+          font-size: 15rpx;
           color: #000;
         }
         .ttl{
-          font-size: 14rpx / @base;
+          font-size: 10rpx;
           color: #585858;
           margin-top: 5rpx;
         }
@@ -141,7 +135,7 @@ page{
       .last{
         flex: 1;
         text-align: right;
-        font-size: 23rpx / @base;
+        font-size: 14rpx;
         color: #c9c9c9;
         image{
           height: 13rpx;
@@ -155,14 +149,14 @@ page{
       line-height: 42rpx;
       height: 42rpx;
       text-align: center;
-      font-size: 28rpx / @base;
+      font-size: 14rpx;
       color: #c9c9c9;
       image{
         height: 13rpx;
         width: 16rpx;
       }
       & > text{
-        font-size: 17rpx / @base;
+        font-size: 14rpx;
         position: absolute;
         right: 10rpx;
         bottom: 0;

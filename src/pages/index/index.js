@@ -13,7 +13,7 @@ Page({
     loading: false,
     dots: false,
     auto: false,
-    current: 2,
+    current: 1,
     pre: '80rpx',
     next: '80rpx',
 
