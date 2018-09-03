@@ -4,10 +4,14 @@
     <view class="bg">
       <image class="head" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/images/touxiang.png'}}"></image>
     </view>
-    <view class="mes">
+    <view wx:if="{{!showRecordBtn}}" class="mes">
       <view class="title">{{userInfo.nickName ? userInfo.nickName : ''}}</view>
       <view class="tt">一些相关简介</view>
     </view>
+    <view wx:else class="mes">
+      <button wx:if="{{canIUse && showRecordBtn}}" size="mini" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" style="background-color: #FFD100;color: #FFF">授权个人信息</button>
+    </view>
+    <button style="display: none" open-type="openSetting" >授权</button>
     <view class="nav">
       <view bindtap="handleNav" data-id="1" class="tab l"><text class="{{tab == 1 ? 'acTab' : ''}}">个人作品</text></view>
       <view bindtap="handleNav" data-id="2" class="tab"><text class="{{tab == 2 ? 'acTab' : ''}}">投票作品</text></view>

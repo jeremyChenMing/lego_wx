@@ -11,9 +11,12 @@ Page({
     host: HOST,
     cells: [],
     authorIdJSON: {},
+    showRecordBtn: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
-    this.getGlobal();
+    // this.getGlobal();
+    this.getMessage();
     getProducts().then( data => {
       if (data.statusCode === 200) {
         let arr = [];
@@ -31,9 +34,40 @@ Page({
         })
       }
     })
-
     
-    
+  },
+  getMessage: function () {
+    const that = this;
+    wx.getSetting({
+      success: function(res){
+        console.log(res)
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+              //用户已经授权过
+            }
+          })
+        }else{
+          that.setData({
+            showRecordBtn: true
+          })
+        }
+      }
+    })
+  },
+  bindGetUserInfo: function (e) {
+    console.log(e.detail.userInfo)
+    if (e.detail.userInfo){
+      //用户按了允许授权按钮
+      console.log('111111')
+      this.setData({
+        showRecordBtn: false
+      })
+    } else {
+      console.log('22222')
+      //用户按了拒绝按钮
+    }
   },
   mapAuthor: function (mes) {
     const that = this;

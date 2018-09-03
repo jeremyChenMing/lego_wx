@@ -19,6 +19,7 @@ page {
   margin-left: -78rpx;
   bottom: -78rpx;
   border-radius: 50%;
+  background: #fff;
 }
 .messageBox .mes {
   padding: 78rpx 0rpx 40rpx;
