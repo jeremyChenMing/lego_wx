@@ -34,7 +34,7 @@ Page({
     // console.log(e, 'onShow')
   },
   onLoad: function (e) {
-    console.log(e, 'onLoad')
+    // console.log(e, 'onLoad')
     wx.showShareMenu({
       withShareTicket: true,
     })
@@ -62,15 +62,15 @@ Page({
     })
 
 
-    // getPersonMes(e.author).then( data => {
-    //   if (data.statusCode === 200) {
-    //     this.setData({
-    //       person: data.data
-    //     })
-    //   }else{
+    getPersonMes(e.author).then( data => {
+      if (data.statusCode === 200) {
+        this.setData({
+          person: data.data
+        })
+      }else{
 
-    //   }
-    // })
+      }
+    })
 
 
     
@@ -179,19 +179,37 @@ Page({
   },
   takeComment: function () {
     this.setData({dis: false})
-    console.log(this.data.params)
-    console.log(this.data.firValue)
 
+    
     addFirComments(this.data.params.id, {content: this.data.firValue}).then( data => {
       this.setData({dis: true})
       if (data.statusCode === 200) {
         this.commentsList()
       }else{
-        wx.showToast({
-          icon: 'none',
-          mask: true,
-          title: data.data.message
-        })
+        
+        if (data.data.code === 'not_authenticated') {
+          wx.showModal({
+            title: `${data.data.message}`,
+            content: '需要授权用户信息！',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.switchTab({
+                  url: '../logs/logs'
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        }else{
+          wx.showToast({
+            icon: 'none',
+            mask: true,
+            title: data.data.message
+          })
+        }
+        
       }
 
     })

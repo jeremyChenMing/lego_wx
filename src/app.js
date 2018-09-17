@@ -8,36 +8,37 @@ App({
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
-    wx.getStorage({
-      key: 'keys',
-      success: function (res) {
-        // console.log(res, '$%$%$')
-        that.globalData['keys'] = res.data
-      },
-      fail: function (res) {
-        // console.log(res, '$%$%$')
-        getUsers().then( data => {
-          if (data.statusCode === 200) {
-            let arr = {};
-            data.data.map( item => {
-              arr[item.id] = item
-            })
-            console.log(arr)
-            wx.setStorage({
-              key:"keys",
-              data: arr
-            })
-          }else{
+    // wx.getStorage({
+    //   key: 'keys',
+    //   success: function (res) {
+    //     // console.log(res, '$%$%$')
+    //     that.globalData['keys'] = res.data
+    //   },
+    //   fail: function (res) {
+    //     // console.log(res, '$%$%$')
+    //     getUsers().then( data => {
+    //       if (data.statusCode === 200) {
+    //         let arr = {};
+    //         data.data.map( item => {
+    //           arr[item.id] = item
+    //         })
+    //         console.log(arr)
+    //         wx.setStorage({
+    //           key:"keys",
+    //           data: arr
+    //         })
+    //       }else{
 
-          }
-        })
-      }
-    })
+    //       }
+    //     })
+    //   }
+    // })
 
     
     // 登录
     wx.login({
       success: res => {
+        console.log(res, 'login--')
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })

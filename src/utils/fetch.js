@@ -65,7 +65,8 @@ export const HOST = 'https://bricks.upvi.com';
 
 
 export const getProducts = (query) => {
-  return get(`${HOST}/api/v1/products`)
+  const url = query ? `${query}` : ''
+  return get(`${HOST}/api/v1/products${url}`)
 }
 export const getProductsOfDetail = (id, query) => {
   return get(`${HOST}/api/v1/products/${id}`)

@@ -10,43 +10,28 @@ Page({
     host: HOST,
     authorIdJSON: {},
     cells: [],
-    loading: false,
+    loadings: false,
     dots: false,
     auto: false,
-    current: 1,
+    current: 0,
     pre: '80rpx',
     next: '80rpx',
 
+
+
+    ids: [],
+    total: 0,
+    loading: true,
+    line: false,
+    pageNum: 1,
+    index: 1
   },
   
-  backTime: function (time) {
-    console.log(time)
-    return '123'
-  },
-  onLoad: function () {
-    wx.showShareMenu({
-      withShareTicket: true,
-    })
-    getProducts().then( data => {
-      if (data.statusCode === 200) {
-        console.log(data.data, '*&')
-        let arr = [];
-        data.data.map( item => {
-          item['CHN'] = formatTimeCH(item.create_at)
-          arr.push(item.author_id)
-        })
-        // this.mapAuthor(unique(arr));
-        this.getGlobal()
-        this.setData({
-          cells: data.data
-        })
-      }else {
-        wx.showToast({
-          title: '获取信息失败'
-        })
-      }
-    })
-
+  onLoad: function () { // 页面初始化
+    // wx.showShareMenu({
+    //   withShareTicket: true,
+    // })
+    this.getDatas('?limit=10&offset=0&order=hot')
     let animation = wx.createAnimation({
       duration: 200,
       timingFunction: 'ease-in',
@@ -54,7 +39,30 @@ Page({
     this.animation = animation
 
   },
-  mapAuthor: function (mes) {
+
+  getDatas: function (search, type) {
+    getProducts(search).then( data => { // 获取所有产品的数据
+      const need = data.data.results
+      if (data.statusCode === 200) {
+        need.map( item => {
+          item['CHN'] = formatTimeCH(item.create_at)
+          this.data.ids.push(item.author_id)
+        })
+        this.mapAuthor(unique(this.data.ids));
+        // this.getGlobal()
+        this.setData({
+          cells: this.data.cells.concat(need),
+          total: data.data.count
+        })
+      }else {
+        wx.showToast({
+          title: '获取信息失败'
+        })
+      }
+    })
+  },
+
+  mapAuthor: function (mes) { //获取作者相关信息
     const that = this;
     let arr = [];
     for(let i=0; i<mes.length; i++) {
@@ -76,6 +84,7 @@ Page({
     wx.navigateTo({
       url: `../detail/detail?id=${id.id}&author=${id.auth}`
     })
+    
   },
   setNavTitle: function (id) { //设置navbar的文字
     const ids = this.data.tab
@@ -89,6 +98,11 @@ Page({
     this.setData({
       tab: dataSet.id
     })
+    // if (dataSet.id === '2') {
+    //   this.getDatas(`?limit=10&offset=${this.data.pageNum}&order=hot`)
+    // }else{
+    //   this.getDatas('?limit=10&offset=0&order=hot')
+    // }
   },
   
 
@@ -104,19 +118,19 @@ Page({
 
 
 
-  onShareAppMessage: function (res) {
-    console.log(res)
-    if (res.from === 'menu') {
-      // 来自右上角的转发菜单
-    }else if (res.from === 'button') {
-      // 来自按钮转发
-    }
-    return {
-      title: '小霸王其乐无穷',
-      path: '/pages/index/index?id=123',
-      imageUrl: '/images/produce.png',
-    }
-  },
+  // onShareAppMessage: function (res) {
+  //   console.log(res)
+  //   if (res.from === 'menu') {
+  //     // 来自右上角的转发菜单
+  //   }else if (res.from === 'button') {
+  //     // 来自按钮转发
+  //   }
+  //   return {
+  //     title: '小霸王其乐无穷',
+  //     path: '/pages/index/index?id=123',
+  //     imageUrl: '/images/produce.png',
+  //   }
+  // },
   noPrise: function () {
     this.setData({
       current: this.data.current + 1
@@ -174,6 +188,27 @@ Page({
         fail: function (res) {
           console.log(res)
         }
+      })
+    }
+  },
+
+
+
+
+
+  bindscrolltolower: function () {
+    let index = this.data.index; //
+    const offset = index * 10; // < this.data.total ? index * 10;
+    if (offset < this.data.total) {
+      this.setData({
+        index: this.data.index + 1
+      })
+      const search = `?limit=10&offset=${offset}&order=hot`;
+      this.getDatas(search)
+    } else{
+      this.setData({
+        loading: false,
+        line: true
       })
     }
   }
